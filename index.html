@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gravity-Defying Fountain ‚Äî Secrets of the Leaping Chain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   ROOT & RESET
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange:     #F39200;
+  --orange-lt:  #FFF3E0;
+  --orange-md:  #FFB74D;
+  --dark:       #2E2D2C;
+  --dark2:      #1A1918;
+  --white:      #FFFFFF;
+  --cream:      #FAFAF7;
+  --purple:     #6B4C93;
+  --purple-lt:  #F0EBFA;
+  --teal:       #0C7C82;
+  --teal-lt:    #E0F5F5;
+  --gold:       #C8860A;
+  --gold-lt:    #FEF9E7;
+  --green:      #2B7A3E;
+  --green-lt:   #E8F5EC;
+  --gray:       #F4F3F0;
+  --gray2:      #E8E7E3;
+  --text:       #2E2D2C;
+  --text-sm:    #5A5855;
+  --shadow:     0 8px 32px rgba(46,45,44,0.12);
+  --shadow-lg:  0 20px 60px rgba(46,45,44,0.18);
+}
+
+html { background: #1a1918; }
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #1a1918;
+  color: var(--text);
+  min-height: 100vh;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   GLOBAL ANIMATIONS
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulseOrange {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(243,146,0,0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(243,146,0,0); }
+}
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes chainFlow {
+  0%   { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes arcRise {
+  0%   { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  60%  { transform: scaleY(1.1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%       { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes beadDrop {
+  0%   { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(243,146,0,0.3)); }
+  50%       { filter: drop-shadow(0 0 14px rgba(243,146,0,0.8)); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes waveMove {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   WRAPPER & LABEL
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.brochure-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.page-label {
+  color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 12px;
+  animation: fadeIn 1s ease both;
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   PAGE (PRINT SHEET)
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--cream);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 800px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* Fold lines */
+.page::before, .page::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(243,146,0,0.5) 0px,
+    rgba(243,146,0,0.5) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  z-index: 10;
+  pointer-events: none;
+}
+.page::before { left: calc(33.333% - 1.5px); }
+.page::after  { right: calc(33.333% - 1.5px); }
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   PANELS
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.panel {
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.8s ease both;
+}
+.panel:nth-child(1) { animation-delay: 0.1s; }
+.panel:nth-child(2) { animation-delay: 0.2s; }
+.panel:nth-child(3) { animation-delay: 0.3s; }
+
+/* ‚îÄ‚îÄ Panel header block ‚îÄ‚îÄ */
+.panel-header {
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: -32px -28px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.panel-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+.panel-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--white);
+  line-height: 1.3;
+  position: relative; z-index: 1;
+}
+.panel-header .sub {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 6px;
+  position: relative; z-index: 1;
+}
+.panel-header .icon-big {
+  position: absolute;
+  right: 18px; top: 50%; transform: translateY(-50%);
+  font-size: 52px;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+/* ‚îÄ‚îÄ Colors per panel ‚îÄ‚îÄ */
+.ph-orange { background: linear-gradient(135deg, #2E2D2C 0%, #3D3C3B 100%); border-bottom: 4px solid var(--orange); }
+.ph-teal   { background: linear-gradient(135deg, #0A6167 0%, #0F9098 100%); border-bottom: 4px solid var(--teal); }
+.ph-purple { background: linear-gradient(135deg, #4A3368 0%, #6B4C93 100%); border-bottom: 4px solid var(--purple); }
+.ph-dark   { background: linear-gradient(135deg, #2E2D2C 0%, #1a1918 100%); border-bottom: 4px solid var(--orange); }
+
+/* ‚îÄ‚îÄ Section label ‚îÄ‚îÄ */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  border-radius: 1px;
+}
+.sl-orange { color: var(--orange); }
+.sl-orange::after { background: var(--orange); }
+.sl-teal   { color: var(--teal); }
+.sl-teal::after   { background: var(--teal); }
+.sl-purple { color: var(--purple); }
+.sl-purple::after { background: var(--purple); }
+.sl-gold   { color: var(--gold); }
+.sl-gold::after   { background: var(--gold); }
+.sl-green  { color: var(--green); }
+.sl-green::after  { background: var(--green); }
+
+/* ‚îÄ‚îÄ Body text ‚îÄ‚îÄ */
+.body-text {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text-sm);
+  margin-bottom: 12px;
+}
+.body-text strong { color: var(--text); }
+.highlight { color: var(--orange); font-weight: 700; }
+.hl-teal   { color: var(--teal); font-weight: 700; }
+.hl-purple { color: var(--purple); font-weight: 700; }
+
+/* ‚îÄ‚îÄ Bullet list ‚îÄ‚îÄ */
+.bullets { list-style: none; margin-bottom: 14px; }
+.bullets li {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 13px;
+  color: var(--text-sm);
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.bullets li:last-child { border-bottom: none; }
+.bullets .dot {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.dot-o { background: var(--orange-lt); color: var(--orange); }
+.dot-t { background: var(--teal-lt);   color: var(--teal); }
+.dot-p { background: var(--purple-lt); color: var(--purple); }
+.dot-g { background: var(--gold-lt);   color: var(--gold); }
+
+/* ‚îÄ‚îÄ Color box ‚îÄ‚îÄ */
+.cbox {
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-left: 4px solid;
+  transition: transform 0.2s;
+}
+.cbox:hover { transform: translateX(4px); }
+.cbox-o { background: var(--orange-lt); border-color: var(--orange); }
+.cbox-t { background: var(--teal-lt);   border-color: var(--teal); }
+.cbox-p { background: var(--purple-lt); border-color: var(--purple); }
+.cbox-g { background: var(--gold-lt);   border-color: var(--gold); }
+.cbox-gr { background: var(--green-lt); border-color: var(--green); }
+.cbox .cbox-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.cbox .cbox-body {
+  font-size: 13px;
+  color: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* ‚îÄ‚îÄ Numbered steps ‚îÄ‚îÄ */
+.steps { list-style: none; margin-bottom: 14px; }
+.steps li {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.step-num {
+  width: 26px; height: 26px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-md));
+  color: white;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+  animation: pulseOrange 3s ease infinite;
+}
+.step-num:nth-child(2) { animation-delay: 0.5s; }
+.step-text { font-size: 13px; color: var(--text-sm); line-height: 1.6; }
+
+/* ‚îÄ‚îÄ Data table ‚îÄ‚îÄ */
+.data-tbl { width: 100%; border-collapse: collapse; font-size: 12px; border-radius: 10px; overflow: hidden; }
+.data-tbl th {
+  background: var(--dark);
+  color: white;
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.data-tbl th:first-child { border-radius: 10px 0 0 0; }
+.data-tbl th:last-child  { border-radius: 0 10px 0 0; }
+.data-tbl td {
+  padding: 8px 10px;
+  text-align: center;
+  color: var(--text);
+  border-bottom: 1px solid var(--gray2);
+}
+.data-tbl tr:nth-child(even) td { background: var(--gray); }
+.data-tbl .row-hi td { background: var(--orange-lt) !important; font-weight: 700; }
+.data-tbl .row-hi td:last-child { color: var(--orange); }
+.stat-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.pill-low  { background: #E3F2FD; color: #1565C0; }
+.pill-mid  { background: var(--purple-lt); color: var(--purple); }
+.pill-high { background: var(--orange-lt); color: var(--orange); }
+
+/* ‚îÄ‚îÄ Key number ‚îÄ‚îÄ */
+.key-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.kn {
+  background: var(--dark);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  animation: countUp 0.6s ease both;
+}
+.kn:nth-child(1) { animation-delay: 0.5s; }
+.kn:nth-child(2) { animation-delay: 0.7s; }
+.kn:nth-child(3) { animation-delay: 0.9s; }
+.kn .kn-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.kn .kn-label { font-size: 10px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
+
+/* ‚îÄ‚îÄ Badge ‚îÄ‚îÄ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.badge-o { background: var(--orange); color: white; animation: pulseOrange 2s infinite; }
+.badge-t { background: var(--teal); color: white; }
+.badge-p { background: var(--purple); color: white; }
+
+/* ‚îÄ‚îÄ Divider ‚îÄ‚îÄ */
+.divider {
+  height: 2px;
+  border-radius: 1px;
+  margin: 16px 0;
+}
+.div-o { background: linear-gradient(90deg, var(--orange), transparent); }
+.div-t { background: linear-gradient(90deg, var(--teal), transparent); }
+.div-p { background: linear-gradient(90deg, var(--purple), transparent); }
+
+/* ‚îÄ‚îÄ Reference item ‚îÄ‚îÄ */
+.ref-item {
+  font-size: 11px;
+  color: var(--text-sm);
+  padding: 6px 0 6px 14px;
+  border-left: 2px solid var(--orange);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* ‚îÄ‚îÄ Physics term ‚îÄ‚îÄ */
+.phys-term {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray2);
+}
+.phys-term .pt-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  background: var(--orange-lt);
+}
+.phys-term .pt-name { font-size: 12px; font-weight: 700; color: var(--dark); }
+.phys-term .pt-def  { font-size: 11px; color: var(--text-sm); line-height: 1.5; }
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   SVG ILLUSTRATIONS
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.svg-wrap {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: linear-gradient(145deg, #0D1117, #1a1918);
+}
+
+/* Chain bead animation */
+.chain-bead {
+  animation: beadDrop 0.4s ease both;
+}
+.bead-1 { animation-delay: 0.0s; }
+.bead-2 { animation-delay: 0.1s; }
+.bead-3 { animation-delay: 0.2s; }
+.bead-4 { animation-delay: 0.3s; }
+.bead-5 { animation-delay: 0.4s; }
+.bead-6 { animation-delay: 0.5s; }
+.bead-7 { animation-delay: 0.6s; }
+
+.arc-path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: chainFlow 2s ease-out 0.8s forwards;
+}
+.arc-path-2 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: chainFlow 2s ease-out 1.2s forwards;
+}
+.arc-path-3 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: chainFlow 2s ease-out 1.6s forwards;
+}
+
+.glow-dot {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   FRONT COVER SPECIAL
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.front-cover {
+  background: linear-gradient(160deg, #2E2D2C 0%, #1a1918 50%, #2E2D2C 100%);
+  position: relative;
+  overflow: hidden;
+}
+.front-cover::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(243,146,0,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.front-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -50px; left: -50px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(107,76,147,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  animation: fadeUp 1s ease 0.3s both;
+}
+.cover-title span { color: var(--orange); font-style: italic; }
+.cover-slogan {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+  animation: fadeUp 1s ease 0.5s both;
+}
+.cover-question {
+  background: var(--orange);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeUp 1s ease 0.7s both, pulseOrange 3s ease 2s infinite;
+}
+
+.cover-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+  animation: fadeUp 1s ease 0.9s both;
+}
+.cig {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.cig-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+.cig-value { font-size: 13px; color: white; font-weight: 600; }
+.cig-value.input { color: var(--orange); border-bottom: 1px dashed rgba(243,146,0,0.4); }
+
+.floating-chain {
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   SPINE PANEL
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.spine-panel {
+  background: linear-gradient(170deg, #2E2D2C 0%, #3D3B39 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 20px;
+  position: relative;
+}
+.spine-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 4px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spine-icon {
+  font-size: 32px;
+  animation: floatUp 3s ease-in-out infinite;
+}
+.spine-badge {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  background: var(--orange);
+  color: white;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 12px 6px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   PRINT STYLES
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+@media print {
+  body { background: white; padding: 0; }
+  .brochure-wrapper { max-width: 100%; }
+  .page { box-shadow: none; border-radius: 0; break-inside: avoid; margin-bottom: 0; }
+  .page::before, .page::after { background: rgba(0,0,0,0.15); }
+  .page-label { display: none; }
+  .front-cover { background: #2E2D2C !important; }
+  .spine-panel { background: #3D3B39 !important; }
+  @page { margin: 10mm; size: landscape; }
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   PARTICLES (decorative)
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.p1 { width: 6px; height: 6px; background: var(--orange); top: 20%; left: 10%; opacity: 0.4; animation: sparkle 3s ease-in-out 0.2s infinite; }
+.p2 { width: 4px; height: 4px; background: var(--orange); top: 60%; left: 85%; opacity: 0.3; animation: sparkle 4s ease-in-out 1s infinite; }
+.p3 { width: 5px; height: 5px; background: white; top: 80%; left: 30%; opacity: 0.2; animation: sparkle 3.5s ease-in-out 2s infinite; }
+.p4 { width: 3px; height: 3px; background: var(--orange); top: 40%; left: 60%; opacity: 0.35; animation: sparkle 2.8s ease-in-out 0.7s infinite; }
+
+/* Orbit ring */
+.orbit-ring {
+  position: absolute;
+  border: 1px solid rgba(243,146,0,0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateSlow 20s linear infinite;
+}
+</style>
+</head>
+<body>
+
+<div class="brochure-wrapper">
+
+  <!-- ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+       PAGE 1 ‚Äî OUTSIDE (when folded)
+       Left=Back Cover | Center=Spine | Right=Front Cover
+  ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê -->
+  <div class="page-label">üìÑ PAGE 1 ‚Äî OUTSIDE WHEN FOLDED &nbsp;|&nbsp; Print ‚Üí Fold into thirds</div>
+
+  <div class="page">
+
+    <!-- ‚îÄ‚îÄ PANEL A: BACK COVER ‚îÄ‚îÄ -->
+    <div class="panel" style="background: var(--cream); border-right: 1px solid var(--gray2);">
+      <div class="panel-header ph-orange">
+        <div class="sub">Back Cover</div>
+        <h2>References &<br>Key Terms</h2>
+        <div class="icon-big">üìö</div>
+      </div>
+
+      <div class="section-label sl-orange">‚öóÔ∏è Physics Vocabulary</div>
+
+      <div class="phys-term">
+        <div class="pt-icon">‚ö°</div>
+        <div>
+          <div class="pt-name">Momentum</div>
+          <div class="pt-def">The energy of motion ‚Äî how much force an object carries as it moves through space.</div>
+        </div>
+      </div>
+      <div class="phys-term">
+        <div class="pt-icon">üîó</div>
+        <div>
+          <div class="pt-name">Tension</div>
+          <div class="pt-def">The pulling force transmitted along the length of the chain links.</div>
+        </div>
+      </div>
+      <div class="phys-term">
+        <div class="pt-icon">üöÄ</div>
+        <div>
+          <div class="pt-name">The Kick Effect</div>
+          <div class="pt-def">Each bead pushes off the container floor, launching the chain upward (Newton's 3rd Law).</div>
+        </div>
+      </div>
+      <div class="phys-term" style="border-bottom: none;">
+        <div class="pt-icon">‚öñÔ∏è</div>
+        <div>
+          <div class="pt-name">Kinetic Energy</div>
+          <div class="pt-def">Energy from the drop height converts into upward motion as the chain falls.</div>
+        </div>
+      </div>
+
+      <div class="divider div-o"></div>
+
+      <div class="section-label sl-orange">üìö References</div>
+      <div class="ref-item">Andalus Science Fair Guidelines 2025‚Äì2026</div>
+      <div class="ref-item">Mould, S. (2013). Self-Siphoning Beads. YouTube.</div>
+      <div class="ref-item">Biggins &amp; Warner (2014). Proceedings of the Royal Society A.</div>
+      <div class="ref-item">NASA Science ‚Äî Newton's Laws of Motion.</div>
+      <div class="ref-item">Khan Academy ‚Äî Kinetic Energy &amp; Gravity.</div>
+
+      <div class="divider div-o"></div>
+
+      <div class="cbox cbox-o" style="margin-top: 10px;">
+        <div class="cbox-title" style="color: var(--orange);">üåü Did You Know?</div>
+        <div class="cbox-body">Steve Mould's video went viral with <strong>millions of views</strong> ‚Äî even top university physicists were surprised by this effect!</div>
+      </div>
+
+      <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--gray2);">
+        <div style="font-size: 11px; color: var(--text-sm); text-align: center;">Al-Andalus International Schools</div>
+        <div style="font-size: 10px; color: #AAAAAA; text-align: center; letter-spacing: 1px;">SCIENCE FAIR 2025‚Äì2026</div>
+      </div>
+    </div>
+
+    <!-- ‚îÄ‚îÄ PANEL B: SPINE ‚îÄ‚îÄ -->
+    <div class="spine-panel">
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+      <div class="particle p4"></div>
+
+      <!-- Orbit ring decorations -->
+      <div class="orbit-ring" style="width:160px; height:160px; top:50%; left:50%; transform:translate(-50%,-50%);"></div>
+      <div class="orbit-ring" style="width:220px; height:220px; top:50%; left:50%; transform:translate(-50%,-50%); animation-direction: reverse; animation-duration: 30s;"></div>
+
+      <div class="spine-icon">üîó</div>
+
+      <div class="spine-title">
+        THE GRAVITY-DEFYING FOUNTAIN ‚Äî Secrets of the Leaping Chain
+      </div>
+
+      <!-- Small chain fountain SVG in spine -->
+      <div style="width: 60px;">
+        <svg viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Beaker -->
+          <rect x="10" y="65" width="40" height="30" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" rx="2"/>
+          <!-- Chain pile -->
+          <ellipse cx="30" cy="88" rx="14" ry="5" fill="rgba(243,146,0,0.4)"/>
+          <!-- Arc -->
+          <path d="M 29 65 Q 20 40 22 15" stroke="var(--orange)" stroke-width="2.5" fill="none" class="arc-path" stroke-linecap="round"/>
+          <!-- Beads on arc -->
+          <circle cx="28" cy="55" r="3" fill="var(--orange)" class="chain-bead bead-1"/>
+          <circle cx="26" cy="44" r="3" fill="#FFB74D" class="chain-bead bead-2"/>
+          <circle cx="24" cy="33" r="3" fill="var(--orange)" class="chain-bead bead-3"/>
+          <circle cx="23" cy="22" r="3" fill="#FFB74D" class="chain-bead bead-4"/>
+          <circle cx="22" cy="12" r="4" fill="var(--orange)" class="glow-dot"/>
+        </svg>
+      </div>
+
+      <div class="spine-badge">The Mould Effect</div>
+    </div>
+
+    <!-- ‚îÄ‚îÄ PANEL C: FRONT COVER ‚îÄ‚îÄ -->
+    <div class="panel front-cover" style="padding: 32px 28px; display: flex; flex-direction: column;">
+      <div class="particle p1"></div>
+      <div class="particle p3"></div>
+      <div class="particle p4"></div>
+
+      <div style="position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%;">
+        
+        <!-- Main SVG illustration -->
+        <div class="floating-chain" style="margin-bottom: 16px;">
+          <svg viewBox="0 0 240 200" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#F39200" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#F39200" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="blur-sm">
+                <feGaussianBlur stdDeviation="2"/>
+              </filter>
+            </defs>
+            <!-- Glow background -->
+            <ellipse cx="120" cy="100" rx="90" ry="70" fill="url(#glow)"/>
+            
+            <!-- Container / Beaker -->
+            <rect x="80" y="135" width="80" height="55" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.3)" stroke-width="2" rx="4"/>
+            <rect x="78" y="130" width="84" height="12" fill="rgba(255,255,255,0.15)" rx="3"/>
+            
+            <!-- Chain pile in beaker -->
+            <ellipse cx="120" cy="178" rx="30" ry="7" fill="rgba(243,146,0,0.5)"/>
+            <ellipse cx="120" cy="170" rx="24" ry="5" fill="rgba(243,146,0,0.6)"/>
+            <ellipse cx="120" cy="163" rx="18" ry="4" fill="rgba(243,146,0,0.7)"/>
+            
+            <!-- Falling chain going right side -->
+            <path d="M 120 130 Q 155 155 158 190" stroke="rgba(255,180,60,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="5,4" class="arc-path-3" stroke-linecap="round"/>
+            <!-- Falling chain beads -->
+            <circle cx="140" cy="148" r="3.5" fill="#FFB74D" opacity="0.8"/>
+            <circle cx="151" cy="165" r="3.5" fill="#F39200" opacity="0.8"/>
+            <circle cx="157" cy="180" r="3.5" fill="#FFB74D" opacity="0.8"/>
+
+            <!-- FOUNTAIN ARC ‚Äî main rising chain -->
+            <path d="M 118 130 Q 95 80 90 30" stroke="var(--orange)" stroke-width="3" fill="none" class="arc-path" stroke-linecap="round"/>
+            
+            <!-- Beads on fountain arc -->
+            <circle cx="116" cy="118" r="4.5" fill="var(--orange)" class="chain-bead bead-1"/>
+            <circle cx="112" cy="104" r="4.5" fill="#FFD54F" class="chain-bead bead-2"/>
+            <circle cx="107" cy="89" r="4.5" fill="var(--orange)" class="chain-bead bead-3"/>
+            <circle cx="101" cy="73" r="4.5" fill="#FFD54F" class="chain-bead bead-4"/>
+            <circle cx="96" cy="56" r="4.5" fill="var(--orange)" class="chain-bead bead-5"/>
+            <circle cx="92" cy="41" r="4.5" fill="#FFD54F" class="chain-bead bead-6"/>
+            <!-- Peak bead with glow -->
+            <circle cx="90" cy="28" r="6" fill="white" class="glow-dot" filter="url(#blur-sm)"/>
+            <circle cx="90" cy="28" r="4" fill="var(--orange)" class="glow-dot"/>
+            
+            <!-- HEIGHT measurement arrow -->
+            <line x1="68" y1="130" x2="68" y2="30" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="68,26 64,36 72,36" fill="rgba(255,255,255,0.6)"/>
+            <polygon points="68,134 64,124 72,124" fill="rgba(255,255,255,0.6)"/>
+            
+            <!-- Height label -->
+            <text x="52" y="84" font-size="10" font-family="JetBrains Mono" fill="rgba(255,255,255,0.7)" text-anchor="middle">h = ?</text>
+            
+            <!-- Sparks at peak -->
+            <circle cx="82" cy="22" r="2" fill="#FFD54F" opacity="0.8" class="chain-bead bead-7"/>
+            <circle cx="96" cy="18" r="1.5" fill="#FFD54F" opacity="0.6" class="chain-bead bead-6"/>
+            <circle cx="78" cy="35" r="1.5" fill="white" opacity="0.5" class="chain-bead bead-5"/>
+            
+            <!-- Labels -->
+            <text x="165" y="150" font-size="9" font-family="Space Grotesk" fill="rgba(255,255,255,0.5)">Falling</text>
+            <text x="78" y="195" font-size="9" font-family="Space Grotesk" fill="rgba(255,255,255,0.5)" text-anchor="middle">Container</text>
+            <text x="98" y="22" font-size="10" font-family="Space Grotesk" fill="var(--orange)" font-weight="bold">PEAK!</text>
+            
+            <!-- Newton badge -->
+            <rect x="150" y="60" width="80" height="38" fill="rgba(107,76,147,0.4)" rx="8" stroke="rgba(107,76,147,0.6)" stroke-width="1"/>
+            <text x="190" y="77" font-size="9" font-family="Space Grotesk" fill="rgba(255,255,255,0.7)" text-anchor="middle">Newton's 3rd</text>
+            <text x="190" y="91" font-size="9" font-family="Space Grotesk" fill="#A78BFA" text-anchor="middle" font-weight="bold">ACTION = REACTION</text>
+          </svg>
+        </div>
+
+        <div class="cover-slogan">Al-Andalus International Schools ¬∑ Science Fair</div>
+        
+        <div class="cover-title">
+          The <span>Gravity-Defying</span><br>Fountain
+        </div>
+
+        <div style="font-family: 'Playfair Display', serif; font-size: 13px; color: rgba(255,255,255,0.5); font-style: italic; margin-bottom: 16px;">
+          Secrets of the Leaping Chain
+        </div>
+
+        <div class="cover-question">
+          Can gravity pull a chain<br><strong>UPWARDS?</strong>
+        </div>
+
+        <div class="cover-info-grid">
+          <div class="cig">
+            <div class="cig-label">Student Name</div>
+            <div class="cig-value">Muhammad Abdulelah Sejini</div>
+          </div>
+          <div class="cig">
+            <div class="cig-label">Grade</div>
+            <div class="cig-value">5.3</div>
+          </div>
+          <div class="cig" style="grid-column: span 2;">
+            <div class="cig-label">School</div>
+            <div class="cig-value">Al-Andalus International Schools</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span class="badge badge-o">Physics</span>
+          <span class="badge badge-t">The Mould Effect</span>
+          <span class="badge badge-p">Newton's Laws</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- END PAGE 1 -->
+
+
+  <!-- ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+       PAGE 2 ‚Äî INSIDE (when unfolded)
+       Left=Research | Center=Experiment | Right=Conclusion
+  ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê -->
+  <div class="page-label">üìÑ PAGE 2 ‚Äî INSIDE WHEN UNFOLDED &nbsp;|&nbsp; The full content spread</div>
+
+  <div class="page">
+
+    <!-- ‚îÄ‚îÄ PANEL D: RESEARCH & QUESTION ‚îÄ‚îÄ -->
+    <div class="panel" style="background: var(--cream); border-right: 1px solid var(--gray2);">
+      <div class="panel-header ph-teal">
+        <div class="sub">Inside Left</div>
+        <h2>Research &<br>Question</h2>
+        <div class="icon-big">üî¨</div>
+      </div>
+
+      <!-- Question box -->
+      <div class="section-label sl-teal">‚ùì The Research Question</div>
+      <div class="cbox cbox-t">
+        <div class="cbox-title" style="color: var(--teal);">Our Question</div>
+        <div class="cbox-body" style="font-size: 14px; font-weight: 600; color: var(--dark); line-height: 1.5;">
+          How does the <span class="hl-teal">height of the container</span> from the floor affect the maximum height of the chain fountain's leap?
+        </div>
+      </div>
+
+      <!-- Height comparison SVG -->
+      <div class="svg-wrap">
+        <svg viewBox="0 0 280 160" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <text x="140" y="14" font-size="9" font-family="Space Grotesk" fill="rgba(255,255,255,0.4)" text-anchor="middle">HEIGHT OF CONTAINER AFFECTS FOUNTAIN HEIGHT</text>
+          
+          <!-- Low container (left) -->
+          <!-- Floor -->
+          <line x1="10" y1="150" x2="115" y2="150" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+          <!-- Container at low height -->
+          <rect x="25" y="100" width="36" height="25" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" rx="2"/>
+          <!-- Chain pile -->
+          <ellipse cx="43" cy="120" rx="12" ry="4" fill="rgba(243,146,0,0.5)"/>
+          <!-- Stand -->
+          <line x1="43" y1="125" x2="43" y2="150" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="3,2"/>
+          <!-- Small arc -->
+          <path d="M 42 100 Q 32 80 35 65" stroke="var(--orange)" stroke-width="2" fill="none" class="arc-path"/>
+          <circle cx="35" cy="63" r="3.5" fill="var(--orange)" class="glow-dot"/>
+          <!-- Height label -->
+          <text x="80" y="115" font-size="8" font-family="JetBrains Mono" fill="#6BB5FF">100 cm</text>
+          <text x="80" y="126" font-size="8" font-family="Space Grotesk" fill="rgba(255,255,255,0.4)">drop height</text>
+          <text x="20" y="63" font-size="8" font-family="Space Grotesk" fill="rgba(243,146,0,0.8)">Low arc</text>
+          <!-- Small fountain label -->
+          <line x1="60" y1="100" x2="60" y2="63" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="63" y="84" font-size="7" font-family="JetBrains Mono" fill="rgba(255,255,255,0.5)">~4cm</text>
+          
+          <!-- High container (right) -->
+          <!-- Floor -->
+          <line x1="155" y1="150" x2="270" y2="150" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+          <!-- Tall stand -->
+          <line x1="213" y1="75" x2="213" y2="150" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="3,2"/>
+          <!-- Container at high position -->
+          <rect x="195" y="50" width="36" height="25" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" rx="2"/>
+          <!-- Chain pile -->
+          <ellipse cx="213" cy="70" rx="12" ry="4" fill="rgba(243,146,0,0.5)"/>
+          <!-- Big arc -->
+          <path d="M 212 50 Q 195 25 198 8" stroke="var(--orange)" stroke-width="2.5" fill="none" class="arc-path-2"/>
+          <circle cx="198" cy="6" r="4" fill="var(--orange)" class="glow-dot"/>
+          <!-- Sparks -->
+          <circle cx="192" cy="10" r="2" fill="#FFD54F" class="chain-bead bead-3"/>
+          <circle cx="205" cy="4" r="1.5" fill="white" class="chain-bead bead-5"/>
+          <!-- Height label -->
+          <text x="230" y="80" font-size="8" font-family="JetBrains Mono" fill="#FF8A65">200 cm</text>
+          <text x="230" y="91" font-size="8" font-family="Space Grotesk" fill="rgba(255,255,255,0.4)">drop height</text>
+          <text x="161" y="8" font-size="8" font-family="Space Grotesk" fill="rgba(243,146,0,0.9)">HIGH arc! üéØ</text>
+          <!-- Big fountain label -->
+          <line x1="247" y1="50" x2="247" y2="6" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="250" y="32" font-size="7" font-family="JetBrains Mono" fill="rgba(255,255,255,0.5)">~15cm</text>
+          
+          <!-- VS label -->
+          <text x="140" y="110" font-size="12" font-family="Playfair Display" fill="var(--orange)" text-anchor="middle" font-weight="bold">VS</text>
+        </svg>
+      </div>
+
+      <div class="section-label sl-orange">üí° Hypothesis</div>
+      <div class="cbox cbox-o">
+        <div class="cbox-title" style="color: var(--orange);">If ‚Üí Then ‚Üí Because</div>
+        <div class="cbox-body">
+          <strong>IF</strong> the container is placed higher from the floor,<br>
+          <strong>THEN</strong> the chain fountain will leap higher,<br>
+          <strong>BECAUSE</strong> greater drop height increases speed and tension, creating a stronger kick from the container floor.
+        </div>
+      </div>
+
+      <div class="section-label sl-purple">üìê Variables</div>
+      <div class="cbox cbox-p" style="margin-bottom: 6px;">
+        <div class="cbox-title" style="color: var(--purple);">‚¨Ü Independent Variable</div>
+        <div class="cbox-body">Container height from floor: <strong>100 cm ¬∑ 150 cm ¬∑ 200 cm</strong></div>
+      </div>
+      <div class="cbox cbox-t" style="margin-bottom: 6px;">
+        <div class="cbox-title" style="color: var(--teal);">üìè Dependent Variable</div>
+        <div class="cbox-body">Maximum fountain arc height above container rim</div>
+      </div>
+      <div class="cbox cbox-g">
+        <div class="cbox-title" style="color: var(--gold);">üîí Controlled Variables</div>
+        <div class="cbox-body">Chain type & length ¬∑ Container size ¬∑ Stacking method</div>
+      </div>
+    </div>
+
+
+    <!-- ‚îÄ‚îÄ PANEL E: THE EXPERIMENT (CENTER) ‚îÄ‚îÄ -->
+    <div class="panel" style="background: white; border-right: 1px solid var(--gray2);">
+      <div class="panel-header ph-purple">
+        <div class="sub">Inside Center</div>
+        <h2>The<br>Experiment</h2>
+        <div class="icon-big">üß™</div>
+      </div>
+
+      <div class="key-numbers">
+        <div class="kn">
+          <div class="kn-num">3</div>
+          <div class="kn-label">Heights Tested</div>
+        </div>
+        <div class="kn">
+          <div class="kn-num">3√ó</div>
+          <div class="kn-label">Trials Each</div>
+        </div>
+        <div class="kn">
+          <div class="kn-num">20m</div>
+          <div class="kn-label">Chain Length</div>
+        </div>
+      </div>
+
+      <div class="section-label sl-orange">üõ†Ô∏è Materials</div>
+      <ul class="bullets">
+        <li><span class="dot dot-o">üîó</span><span>Long metal bead chain (10‚Äì20 meters)</span></li>
+        <li><span class="dot dot-o">ü´ô</span><span>Clear glass jar or plastic container</span></li>
+        <li><span class="dot dot-o">üìè</span><span>Measuring tape or meter stick</span></li>
+        <li><span class="dot dot-o">üì±</span><span>Slow-motion camera / smartphone</span></li>
+        <li><span class="dot dot-o">ü™ú</span><span>Stable platform at adjustable heights</span></li>
+      </ul>
+
+      <div class="section-label sl-purple">üìã Procedure</div>
+      <ul class="steps">
+        <li><span class="step-num">1</span><span class="step-text">Carefully <strong>stack the chain</strong> in the container ‚Äî no tangles allowed!</span></li>
+        <li><span class="step-num">2</span><span class="step-text">Place the container at <strong>100 cm</strong> above the floor.</span></li>
+        <li><span class="step-num">3</span><span class="step-text">Pull the chain end over the rim and <strong>let it drop</strong> to the floor.</span></li>
+        <li><span class="step-num">4</span><span class="step-text"><strong>Film in slow-motion</strong> and measure the fountain's peak height.</span></li>
+        <li><span class="step-num">5</span><span class="step-text">Repeat at <strong>150 cm</strong> and <strong>200 cm</strong>.</span></li>
+        <li><span class="step-num">6</span><span class="step-text">Do <strong>3 trials</strong> per height. Calculate the average.</span></li>
+      </ul>
+
+      <div class="section-label sl-teal">üìä Results Table</div>
+      <table class="data-tbl">
+        <thead>
+          <tr><th>Container Height</th><th>Avg Fountain</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>100 cm</td><td>~4 cm</td><td><span class="stat-pill pill-low">Low Arc</span></td></tr>
+          <tr><td>150 cm</td><td>~9 cm</td><td><span class="stat-pill pill-mid">Medium Arc</span></td></tr>
+          <tr class="row-hi"><td>200 cm</td><td>~15 cm</td><td><span class="stat-pill pill-high">HIGH Arc! üéØ</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- Bar chart SVG -->
+      <div class="svg-wrap" style="margin-top: 10px;">
+        <svg viewBox="0 0 240 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <text x="120" y="12" font-size="8" font-family="Space Grotesk" fill="rgba(255,255,255,0.4)" text-anchor="middle">FOUNTAIN HEIGHT vs CONTAINER HEIGHT</text>
+          <!-- Axes -->
+          <line x1="40" y1="20" x2="40" y2="95" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="40" y1="95" x2="220" y2="95" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <!-- Bars -->
+          <rect x="55"  y="68" width="40" height="27" fill="#6BB5FF" rx="3"/>
+          <rect x="115" y="43" width="40" height="52" fill="#A78BFA" rx="3"/>
+          <rect x="175" y="15" width="40" height="80" fill="var(--orange)" rx="3" class="glow-dot"/>
+          <!-- Labels -->
+          <text x="75"  y="110" font-size="8" font-family="JetBrains Mono" fill="rgba(255,255,255,0.5)" text-anchor="middle">100cm</text>
+          <text x="135" y="110" font-size="8" font-family="JetBrains Mono" fill="rgba(255,255,255,0.5)" text-anchor="middle">150cm</text>
+          <text x="195" y="110" font-size="8" font-family="JetBrains Mono" fill="rgba(255,255,255,0.5)" text-anchor="middle">200cm</text>
+          <text x="75"  y="65" font-size="8" font-family="JetBrains Mono" fill="white" text-anchor="middle">4cm</text>
+          <text x="135" y="40" font-size="8" font-family="JetBrains Mono" fill="white" text-anchor="middle">9cm</text>
+          <text x="195" y="12" font-size="8" font-family="JetBrains Mono" fill="var(--orange)" text-anchor="middle" font-weight="bold">15cm</text>
+          <!-- Y-axis label -->
+          <text x="10" y="58" font-size="7" font-family="Space Grotesk" fill="rgba(255,255,255,0.3)" text-anchor="middle" transform="rotate(-90, 10, 58)">Fountain Height</text>
+        </svg>
+      </div>
+    </div>
+
+
+    <!-- ‚îÄ‚îÄ PANEL F: CONCLUSION ‚îÄ‚îÄ -->
+    <div class="panel" style="background: var(--cream);">
+      <div class="panel-header ph-dark">
+        <div class="sub">Inside Right</div>
+        <h2>Results &<br>Conclusion</h2>
+        <div class="icon-big">üèÜ</div>
+      </div>
+
+      <div class="section-label sl-green">‚úÖ Conclusion</div>
+      <div class="cbox cbox-gr">
+        <div class="cbox-title" style="color: var(--green);">üèÜ Hypothesis: CORRECT!</div>
+        <div class="cbox-body">
+          The drop height is the <strong>main factor</strong> determining fountain height. When the chain falls from a greater height, gravity pulls it faster, creating more tension. This tension causes the chain to <em>kick off</em> the container floor with greater force ‚Äî launching a taller fountain!
+        </div>
+      </div>
+
+      <!-- Mould effect diagram SVG -->
+      <div class="svg-wrap">
+        <svg viewBox="0 0 240 140" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <text x="120" y="12" font-size="8" font-family="Space Grotesk" fill="rgba(255,255,255,0.4)" text-anchor="middle">THE MOULD EFFECT ‚Äî HOW IT WORKS</text>
+          
+          <!-- Container -->
+          <rect x="85" y="90" width="70" height="40" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.25)" stroke-width="2" rx="3"/>
+          <rect x="83" y="86" width="74" height="10" fill="rgba(255,255,255,0.12)" rx="3"/>
+          
+          <!-- Chain pile in beaker -->
+          <ellipse cx="120" cy="123" rx="26" ry="7" fill="rgba(243,146,0,0.4)"/>
+          <ellipse cx="120" cy="115" rx="20" ry="5" fill="rgba(243,146,0,0.5)"/>
+          
+          <!-- Fountain arc rising -->
+          <path d="M 118 86 Q 98 55 100 25" stroke="var(--orange)" stroke-width="3" fill="none" class="arc-path" stroke-linecap="round"/>
+          <!-- Beads -->
+          <circle cx="116" cy="76" r="4" fill="var(--orange)" class="chain-bead bead-1"/>
+          <circle cx="112" cy="64" r="4" fill="#FFD54F" class="chain-bead bead-2"/>
+          <circle cx="108" cy="51" r="4" fill="var(--orange)" class="chain-bead bead-3"/>
+          <circle cx="104" cy="38" r="4" fill="#FFD54F" class="chain-bead bead-4"/>
+          <circle cx="101" cy="24" r="5" fill="var(--orange)" class="glow-dot"/>
+          
+          <!-- Falling right side -->
+          <path d="M 120 86 Q 145 100 148 130" stroke="rgba(255,180,60,0.5)" stroke-width="2" fill="none" class="arc-path-2" stroke-dasharray="4,3"/>
+          <circle cx="136" cy="98" r="3" fill="#FFB74D" opacity="0.7"/>
+          <circle cx="143" cy="114" r="3" fill="#FFB74D" opacity="0.7"/>
+          
+          <!-- Force arrows -->
+          <!-- Gravity down -->
+          <line x1="195" y1="25" x2="195" y2="70" stroke="#6BB5FF" stroke-width="2" marker-end="url(#aB)"/>
+          <text x="200" y="50" font-size="8" font-family="Space Grotesk" fill="#6BB5FF">Gravity</text>
+          <text x="200" y="61" font-size="8" font-family="Space Grotesk" fill="#6BB5FF">‚Üì faster</text>
+          
+          <!-- Tension up -->
+          <line x1="65" y1="86" x2="65" y2="35" stroke="#A78BFA" stroke-width="2" marker-end="url(#aC)"/>
+          <text x="25" y="55" font-size="8" font-family="Space Grotesk" fill="#A78BFA">Tension</text>
+          <text x="30" y="66" font-size="8" font-family="Space Grotesk" fill="#A78BFA">‚Üë kick!</text>
+          
+          <!-- Label at bottom -->
+          <text x="120" y="136" font-size="7.5" font-family="Space Grotesk" fill="rgba(255,255,255,0.4)" text-anchor="middle">Action (down) = Reaction (up) = Fountain!</text>
+          
+          <defs>
+            <marker id="aB" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <polygon points="0,0 8,4 0,8" fill="#6BB5FF"/>
+            </marker>
+            <marker id="aC" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <polygon points="0,8 8,4 0,0" fill="#A78BFA"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="section-label sl-purple">üî≠ Drop Height vs Chain Length</div>
+      <div class="cbox cbox-p" style="margin-bottom: 6px;">
+        <div class="cbox-title" style="color: var(--purple);">Drop Height ‚Üí HOW HIGH</div>
+        <div class="cbox-body">Higher container = faster fall = stronger tension = <strong>taller fountain</strong></div>
+      </div>
+      <div class="cbox cbox-t">
+        <div class="cbox-title" style="color: var(--teal);">Chain Length ‚Üí HOW LONG</div>
+        <div class="cbox-body">A longer chain <strong>extends the duration</strong> ‚Äî but does not make it jump higher</div>
+      </div>
+
+      <div class="section-label sl-gold">üöÄ Future Experiments</div>
+      <ul class="bullets" style="margin-bottom: 0;">
+        <li><span class="dot dot-g">1</span><span>Test heights above 200 cm ‚Äî does the pattern continue?</span></li>
+        <li><span class="dot dot-g">2</span><span>Compare plastic vs. metal chains</span></li>
+        <li><span class="dot dot-g">3</span><span>Try different container sizes and shapes</span></li>
+        <li><span class="dot dot-g" style="border: none;">4</span><span>Ultra-slow-motion filming to study the kick effect</span></li>
+      </ul>
+    </div>
+
+  </div><!-- END PAGE 2 -->
+
+  <!-- Print instructions -->
+  <div style="text-align: center; color: rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 1px; margin-top: 16px;">
+    üñ®Ô∏è PRINT INSTRUCTIONS: Print both pages ¬∑ Fold page 1 so the Front Cover faces outward ¬∑ Fold page 2 for the inside spread
+  </div>
+
+</div><!-- END WRAPPER -->
+
+<!-- ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+     Entrance animations (Intersection Observer)
+‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê -->
+<script>
+// Stagger panel animations on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.panel, .kn, .cbox').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = `opacity 0.6s ease ${i * 0.06}s, transform 0.6s ease ${i * 0.06}s`;
+  observer.observe(el);
+});
+
+// Animate bars in chart on scroll
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('rect[height]').forEach((bar, i) => {
+        const h = bar.getAttribute('height');
+        bar.style.transformOrigin = 'bottom';
+        bar.style.transform = 'scaleY(0)';
+        bar.style.transition = `transform 0.8s ease ${i * 0.2}s`;
+        setTimeout(() => { bar.style.transform = 'scaleY(1)'; }, 50);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+</script>
+
+</body>
+</html>
